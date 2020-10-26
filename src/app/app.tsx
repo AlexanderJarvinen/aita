@@ -1,16 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createBrowserHistory } from 'history'
+import Main from "./main";
+import configureStore from './configureStore'
+const history = createBrowserHistory()
 
-const App: React.FC<{ compiler: string, framework: string }> = (props) => {
-  return (
-    <div>
-      <div>{props.compiler}</div>
-      <div>{props.framework}</div>
-    </div>
-  );
-}
+const initialState = window.INITIAL_REDUX_STATE
+const store = configureStore(history, initialState)
+
 
 ReactDOM.render(
-  <App compiler="TypeScript" framework="React" />,
+<Main store={store} history={history} />,
   document.getElementById("root")
 );
