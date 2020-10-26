@@ -4,6 +4,8 @@ import { createBrowserHistory } from 'history'
 import Main from "./main";
 import configureStore from './configureStore'
 const history = createBrowserHistory()
+//import 'react-reflex/styles.css';
+import '../assets/styles/react-reflex.css';
 
 const initialState = window.INITIAL_REDUX_STATE
 const store = configureStore(history, initialState)

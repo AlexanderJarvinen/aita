@@ -20,7 +20,12 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.tsx?$/, loader: 'ts-loader' }
+        { test: /\.tsx?$/, loader: 'ts-loader' },
+          {
+              test: /\.(scss|css)$/,
+              use: ['style-loader', 'css-loader', 'postcss-loader'],
+          },
+
     ]
   }
 }

@@ -5,6 +5,6 @@
     "\\src\\app",
     "\\src\\store"
   ],
-  "SelectedNode": "\\src\\app\\react-app-env.d.ts",
+  "SelectedNode": "\\src\\store\\index.ts",
   "PreviewInSolutionExplorer": false
 }
