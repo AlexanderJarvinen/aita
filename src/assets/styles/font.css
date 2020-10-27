@@ -1,0 +1,29 @@
+@font-face {
+    font-family: "SFProDisplay";
+    src: url('../fonts/SFProDisplay-Regular.woff2') format("woff2"), 
+         url("../fonts/SFProDisplay-Regular.woff") format("woff"), 
+         url("../fonts/SFProDisplay-Regular.ttf") format('truetype'),
+        url("../fonts/SFProDisplay-Regular.eot") format('embedded-opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "SFProDisplayBlack";
+    src: url('../fonts/SFProDisplay-Black.woff2') format("woff2"), 
+         url("../fonts/SFProDisplay-Black.woff") format("woff"), 
+         url("../fonts/SFProDisplay-Black.ttf") format('truetype'), 
+        url("../fonts/SFProDisplay-Black.eot") format('embedded-opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "SFProDisplayBold";
+    src: url('../fonts/SFProDisplay-Bold.woff2') format("woff2"), 
+         url("../fonts/SFProDisplay-Bold.woff") format("woff"), 
+         url("../fonts/SFProDisplay-Bold.ttf") format('truetype'), 
+         url("../fonts/SFProDisplay-Bold.eot") format('embedded-opentype');
+    font-weight: 700;
+    font-style: normal;
+}
