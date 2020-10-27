@@ -3,6 +3,10 @@ import { History } from "history";
 import { Store } from "redux";
 import { Provider } from 'react-redux';
 import { ApplicationState } from '../store';
+import Routes from './routes';
+import { ConnectedRouter } from 'connected-react-router';
+import { Router } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 //import {
 //    ReflexContainer,
 //    ReflexSplitter,
@@ -10,7 +14,7 @@ import { ApplicationState } from '../store';
 //    ReflexHandle
 //} from 'react-reflex';
 
-import MainWrapper from '../components/MainContainer';
+
 
 
 
@@ -22,7 +26,11 @@ interface MainProps {
 }
 
 const Main: React.FC<MainProps> = ({ store, history }) => {
-    return (<Provider store={store}><MainWrapper></MainWrapper></Provider>);
+    return (<Provider store={store}>
+        <BrowserRouter>
+                <Routes />
+        </BrowserRouter>
+    </Provider>);
     //return (<Provider store={store}>
     //    <MainWrapper></MainWrapper>
     //    <ReflexContainer orientation="horizontal">

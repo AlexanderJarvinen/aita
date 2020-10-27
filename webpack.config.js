@@ -23,7 +23,13 @@ module.exports = {
         { test: /\.tsx?$/, loader: 'ts-loader' },
           {
               test: /\.(scss|css)$/,
-              use: ['style-loader', 'css-loader', 'postcss-loader'],
+              use: ['style-loader', 'css-loader', 'postcss-loader', {
+                  loader: 'sass-loader',
+                  options: {
+                      implementation: require('sass'),
+                  },
+              },
+             ],
           },
           {
               test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)$/,

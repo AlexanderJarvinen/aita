@@ -1,16 +1,5 @@
-@font-face {
-    font-family: "SFProDisplay";
-    src: url('../fonts/SFProDisplay-Regular.woff2').format("woff2"), 
-         url("../fonts/SFProDisplay-Regular.woff").format("woff"), 
-         url("../fonts/SFProDisplay-Regular.ttf").format('truetype'), 
-         url("../fonts/SFProDisplay-Regular.eot")format('embedded-opentype');
-    font-weight: 700;
-    font-style: normal;
-}
 
-#root {
 
-}
 
 body {
     font-family: SFProDisplay, sans-serif;
@@ -18,8 +7,17 @@ body {
 
 .main-wrapper {
     max-width: 800px;
-    min-width:375px;
+    min-width: 375px;
     height: 100vh;
     background-color: aqua;
-    margin:0 auto;
+    margin: 0 auto;
+    padding-top: 91px;
+
+    h1 {
+        font-family: SFProDisplayBold, sans-serif;
+        margin: 0 16px;
+        font-weight: 500;
+        font-size: 34px;
+    }
 }
+
