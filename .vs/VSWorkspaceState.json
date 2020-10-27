@@ -3,8 +3,12 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\store"
+    "\\src\\assets",
+    "\\src\\assets\\styles",
+    "\\src\\components",
+    "\\src\\store",
+    "\\src\\templates"
   ],
-  "SelectedNode": "\\src\\store\\index.ts",
+  "SelectedNode": "\\package.json",
   "PreviewInSolutionExplorer": false
 }
