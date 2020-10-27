@@ -25,6 +25,15 @@ module.exports = {
               test: /\.(scss|css)$/,
               use: ['style-loader', 'css-loader', 'postcss-loader'],
           },
+          {
+              test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)$/,
+              exclude: /node_modules/,
+              loader: "file-loader"
+          },
+          {
+              test: /\.(eot|ttf)$/,
+              loader: "file-loader",
+          },
 
     ]
   }
