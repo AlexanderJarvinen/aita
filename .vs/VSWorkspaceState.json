@@ -3,13 +3,8 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\assets",
-    "\\src\\components",
-    "\\src\\pages",
-    "\\src\\store",
-    "\\src\\store\\layout",
     "\\src\\templates"
   ],
-  "SelectedNode": "\\src\\components\\MainWrapper.tsx",
+  "SelectedNode": "\\src\\app\\configureStore.ts",
   "PreviewInSolutionExplorer": false
 }
