@@ -1,9 +1,11 @@
 ﻿import { createMuiTheme } from '@material-ui/core/styles';
+import { red } from '@material-ui/core/colors';
 
 const theme = createMuiTheme({
     overrides: {
         MuiInputBase: {
             root: {
+                fontFamily: "SFProDisplayBold", 
                 borderBottom: '0',
                 disableUnderline: true,
                 margin: '0'
@@ -39,7 +41,12 @@ const theme = createMuiTheme({
             root: {
                 fill: 'rgba(120, 120, 128, 0.16)'
             }
-        }
+        },
+        //MuiButton: {
+        //    containedPrimary: {
+        //        backgroundColor: '#000000',
+        //    },
+        //}
     }
 });
 

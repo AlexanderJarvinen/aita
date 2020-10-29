@@ -14,6 +14,11 @@ import VerticalLine from '../assets/icons/verticalLine';
 import ArrowButton from '../assets/icons/arrowButton';
 import DepartureDate from '../assets/icons/departureDate';
 import ArrivalDate from '../assets/icons/arrivalDate';
+import Person from '../assets/icons/person';
+import TextFieldTemplate from '../components/TextFieldTemplate';
+import DateFieldTemplate from '../components/DateFieldTemplate';
+import Button from '@material-ui/core/Button';
+import { withStyles } from '@material-ui/core/styles';
 import { DatePicker } from '@material-ui/pickers'
 
 
@@ -29,6 +34,21 @@ type State = {
     arrivalDate: any
 
 }
+
+const SearchButton = withStyles({
+    root: {
+        backgroundColor: '#000000',
+        height: '44px',
+        width: '100%',
+        borderRadius: '10px',
+        fontFamily: 'SFProDisplayBold',
+        fontSize: '17px',
+        textTransform: 'none',
+        '&:hover': {
+            backgroundColor: '#000000',
+        }
+    },
+})(Button);
 
 class Flights extends React.Component<Props, State> {
     readonly state: State = {
@@ -61,10 +81,15 @@ class Flights extends React.Component<Props, State> {
         return (
             <ReflexContainer orientation="horizontal">
                 <ReflexElement minSize={36} className="reflex-element-top">
+                    <div className="fieldRowLeft">
+                        <Person />
+                        <span>1 Adult, Economy, USD</span>
+                    </div>
                     <FilledInput
                         id="filled-input-from"
                         type={'text'}
                         value={from}
+                        inputComponent={TextFieldTemplate}
                         disableUnderline={true}
                         startAdornment={
                             <InputAdornment position="start">
@@ -91,6 +116,7 @@ class Flights extends React.Component<Props, State> {
                         type={'text'}
                         value={to}
                         disableUnderline={true}
+                        inputComponent={TextFieldTemplate}
                         startAdornment={
                             <InputAdornment position="start">
                                 <IconButton
@@ -119,6 +145,7 @@ class Flights extends React.Component<Props, State> {
                                 style={{margin: '0', marginRight: '3px'}}
                                 value={departureDate}
                                 disableUnderline={true}
+                                inputComponent={DateFieldTemplate}
                                 startAdornment={
                                     <InputAdornment position="start">
                                         <IconButton
@@ -172,6 +199,11 @@ class Flights extends React.Component<Props, State> {
 
                             />
                         </div>
+                    </div>
+                    <div className="fieldRow">
+                        <SearchButton variant="contained" color="primary">
+                            Search
+                        </SearchButton>
                     </div>
                     <div className="content-between-fields">
                         <Input

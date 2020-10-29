@@ -37,6 +37,7 @@
     "postcss-loader": "^4.0.4",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "react-flagkit-svg": "^1.0.6",
     "react-redux-typescript-scripts": "^1.6.2",
     "react-reflex": "^3.1.0",
     "react-router": "^5.2.0",

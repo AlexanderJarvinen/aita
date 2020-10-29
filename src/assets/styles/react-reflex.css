@@ -18,6 +18,9 @@ body.reflex-row-resize {
     /* OLD - Firefox 19- (buggy but mostly works) */
     /* TWEENER - IE 10 */
     /* NEW - Chrome */
+    font-family: SFProDisplayBold,sans-serif;
+    font-weight: 500;
+    font-style: normal;
     display: flex;
     position: relative;
     height: 100%;

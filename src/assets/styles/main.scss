@@ -67,11 +67,46 @@ body {
     }
 
     .fieldRow {
-        display:flex;
-        padding:20px 16px 0;
+        display: flex;
+        padding: 20px 16px 0;
 
         .fieldRowHalf {
-            width:50%;
+            width: 50%;
+        }
+    }
+
+    .fieldRowLeft {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 20px 16px 0;
+        align-items: center;
+
+        span {
+            margin-left: 4px;
+        }
+    }
+
+    .textTempl {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .cityCode {
+            font-weight: 500;
+            font-size: 15px;
+            text-transform: uppercase;
+        }
+
+        .cityName {
+            font-family: "SFProDisplay";
+            font-weight: 400;
+            font-size: 15px;
+            color: #787880;
+        }
+
+        .countryFlag {
+            margin-left:4px;
         }
     }
 }
