@@ -12,8 +12,9 @@ const Routes: React.SFC = () => (
         <h1>Booking</h1>
         <Tabs />
         <Switch>
-            <Route path="/flights" component={Flights} />
+            <Route exact path="/flights" component={Flights} />
             <Route path="/hotels" component={Hotels} />
+            <Redirect from='/' to='/flights' />
         </Switch>
     </Root>
 

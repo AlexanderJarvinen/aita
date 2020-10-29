@@ -4,9 +4,11 @@ import { Store } from "redux";
 import { Provider } from 'react-redux';
 import { ApplicationState } from '../store';
 import Routes from './routes';
-import { ConnectedRouter } from 'connected-react-router';
-import { Router } from 'react-router-dom';
 import { BrowserRouter } from 'react-router-dom';
+import { ThemeProvider } from '@material-ui/core/styles';
+import theme from '../theme/theme';
+import DateFnsUtils from '@date-io/date-fns';
+import { MuiPickersUtilsProvider } from '@material-ui/pickers';
 
 
 
@@ -23,7 +25,11 @@ interface MainProps {
 const Main: React.FC<MainProps> = ({ store, history }) => {
     return (<Provider store={store}>
         <BrowserRouter>
-                <Routes />
+            <ThemeProvider theme={theme}>
+                <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                    <Routes />
+                </MuiPickersUtilsProvider>
+            </ThemeProvider>
         </BrowserRouter>
     </Provider>);
 }

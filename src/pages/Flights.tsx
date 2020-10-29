@@ -6,27 +6,196 @@ import {
     ReflexHandle
 } from 'react-reflex';
 
+import { FilledInput, Input, InputAdornment, IconButton } from '@material-ui/core/';
+import CrossIcon from '../assets/icons/cross';
+import FilledBlueCircle from '../assets/icons/filledBlueCircle';
+import EmptyBlueCircle from '../assets/icons/emptyBlueCircle';
+import VerticalLine from '../assets/icons/verticalLine';
+import ArrowButton from '../assets/icons/arrowButton';
+import DepartureDate from '../assets/icons/departureDate';
+import ArrivalDate from '../assets/icons/arrivalDate';
+import { DatePicker } from '@material-ui/pickers'
+
+
+import { InputBase } from '@material-ui/core/';
 type Props = {
 
 }
 
 type State = {
+    from: string,
+    to: string,
+    departureDate: string,
+    arrivalDate: any
 
 }
 
 class Flights extends React.Component<Props, State> {
+    readonly state: State = {
+        from: "From",
+        to: "To",
+        departureDate: new Date().toString().split(' ').slice(0, 3).join(' '),
+        arrivalDate: new Date().toString().split(' ').slice(0, 3).join(' '),
+    }
+
+    handleClearFrom = () => {
+        this.setState({from:''});
+    }
+
+    handleClearTo = () => {
+        this.setState({ to: '' });
+    }
+
+    handleClearDeparturDate = () => {
+        this.setState({ departureDate: '' });
+    }
+
+    handleClearArrivalDate = () => {
+        this.setState({ arrivalDate: '' });
+    }
+
     render() {
+        const { handleClearFrom, handleClearTo, handleClearDeparturDate, handleClearArrivalDate } = this;
+        const { from, to, departureDate, arrivalDate } = this.state;
+
         return (
             <ReflexContainer orientation="horizontal">
-                <ReflexElement minSize={36}>
-                    <div className="handle">
-                        Top Pane Header
+                <ReflexElement minSize={36} className="reflex-element-top">
+                    <FilledInput
+                        id="filled-input-from"
+                        type={'text'}
+                        value={from}
+                        disableUnderline={true}
+                        startAdornment={
+                            <InputAdornment position="start">
+                                <IconButton
+                                    edge="start"
+                                >
+                                    <FilledBlueCircle />
+                                </IconButton>
+                            </InputAdornment>
+                        }
+                        endAdornment={
+                            <InputAdornment position="end">
+                                <IconButton
+                                    onClick={handleClearFrom}
+                                    edge="end"
+                                >
+                                    <CrossIcon/>
+                                </IconButton>
+                            </InputAdornment>
+                        }
+                    />
+                    <FilledInput
+                        id="filled-input-to"
+                        type={'text'}
+                        value={to}
+                        disableUnderline={true}
+                        startAdornment={
+                            <InputAdornment position="start">
+                                <IconButton
+                                    edge="start"
+                                >
+                                    <EmptyBlueCircle />
+                                </IconButton>
+                            </InputAdornment>
+                        }
+                        endAdornment={
+                            <InputAdornment position="end">
+                                <IconButton
+                                    onClick={handleClearTo}
+                                    edge="end"
+                                >
+                                    <CrossIcon />
+                                </IconButton>
+                            </InputAdornment>
+                        }
+                    />
+                    <div className="fieldRow">
+                        <div className="fieldRowHalf">
+                            <FilledInput
+                                id="filled-departure-date"
+                                type={'text'}
+                                style={{margin: '0', marginRight: '3px'}}
+                                value={departureDate}
+                                disableUnderline={true}
+                                startAdornment={
+                                    <InputAdornment position="start">
+                                        <IconButton
+                                            edge="start"
+                                            disabled={true}
+                                        >
+                                            <DepartureDate />
+                                        </IconButton>
+                                    </InputAdornment>
+                                }
+                                endAdornment={
+                                    <InputAdornment position="end">
+                                        <IconButton
+                                            onClick={handleClearDeparturDate}
+                                            edge="end"
+                                        >
+                                            <CrossIcon />
+                                        </IconButton>
+                                    </InputAdornment>
+                                }
+                               
+                            />
+                        </div>
+                        <div className="fieldRowHalf">
+                            <FilledInput
+                                id="filled-arrival-date"
+                                type={'text'}
+                                value={arrivalDate}
+                                style={{ margin: '0' }}
+                                disableUnderline={true}
+                                startAdornment={
+                                    <InputAdornment position="start">
+                                        <IconButton
+                                            disabled={true}
+                                            edge="start"
+                                        >
+                                            <ArrivalDate />
+                                        </IconButton>
+                                    </InputAdornment>
+                                }
+                                endAdornment={
+                                    <InputAdornment position="end">
+                                        <IconButton
+                                            onClick={handleClearArrivalDate}
+                                            edge="end"
+                                        >
+                                            <CrossIcon />
+                                        </IconButton>
+                                    </InputAdornment>
+                                }
+
+                            />
+                        </div>
                     </div>
-                    <div className="pane-content">
-                        <label>
-                            Top Pane
-                        </label>
+                    <div className="content-between-fields">
+                        <Input
+                            id="filled-adornment-password"
+                            disableUnderline={true}
+                            startAdornment={
+                                <InputAdornment position="start" disablePointerEvents={true}>
+                                    <IconButton
+                                        disableFocusRipple={true}
+                                        disableRipple={true}
+                                        edge="start"
+                                    >
+                                        <VerticalLine />
+                                    </IconButton>
+                                </InputAdornment>
+                            }
+                        />
                     </div>
+                    <div className="arrow-button">
+                        <IconButton color="primary" aria-label="add to shopping cart">
+                            <ArrowButton />
+                        </IconButton>
+                    </div>
+
                 </ReflexElement>
 
                 <ReflexSplitter />

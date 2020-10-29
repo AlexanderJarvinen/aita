@@ -3,8 +3,13 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\templates"
+    "\\src\\assets",
+    "\\src\\assets\\icons",
+    "\\src\\assets\\styles",
+    "\\src\\pages",
+    "\\src\\templates",
+    "\\src\\theme"
   ],
-  "SelectedNode": "\\src\\app\\configureStore.ts",
+  "SelectedNode": "\\src\\assets\\styles\\main.scss",
   "PreviewInSolutionExplorer": false
 }
