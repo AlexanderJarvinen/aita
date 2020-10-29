@@ -42,11 +42,6 @@ const theme = createMuiTheme({
                 fill: 'rgba(120, 120, 128, 0.16)'
             }
         },
-        //MuiButton: {
-        //    containedPrimary: {
-        //        backgroundColor: '#000000',
-        //    },
-        //}
     }
 });
 
