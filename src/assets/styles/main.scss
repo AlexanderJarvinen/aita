@@ -8,7 +8,7 @@ body {
 .main-wrapper {
     font-family: SFProDisplayBold, sans-serif;
     max-width: 800px;
-    min-width: 375px;
+    min-width: 300px;
     height: 100vh;
     margin: 0 auto;
     padding-top: 91px;
@@ -52,8 +52,8 @@ body {
 
     .content-between-fields {
         position: relative;
-        bottom: 248px;
-        left: 11.5px;
+        bottom: 310px;
+        left: 11.8px;
         width: 10%;
     }
 
@@ -63,7 +63,7 @@ body {
         flex-direction: row;
         justify-content: center;
         position: relative;
-        bottom: 361px;
+        bottom: 425px;
     }
 
     .fieldRow {
@@ -106,7 +106,20 @@ body {
         }
 
         .countryFlag {
-            margin-left:4px;
+            margin-left: 4px;
+        }
+
+        .dayMonth {
+            font-weight: 500;
+            font-size: 15px;
+            text-transform: uppercase;
+        }
+
+        .qtyDays {
+            font-family: "SFProDisplay";
+            font-weight: 400;
+            font-size: 15px;
+            color: #787880;
         }
     }
 }

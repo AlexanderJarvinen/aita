@@ -1,15 +1,15 @@
-﻿import { createMuiTheme } from '@material-ui/core/styles';
+import { createMuiTheme } from '@material-ui/core/styles';
 
 
-const theme: any = createMuiTheme({
+const themeMobile: any = createMuiTheme({
     overrides: {
         MuiInputBase: {
             root: {
-                fontFamily: "SFProDisplayBold", 
+                fontFamily: "SFProDisplayBold",
                 borderBottom: '0',
                 disableUnderline: true,
                 margin: '0'
-                
+
             }
         },
         MuiFilledInput: {
@@ -50,4 +50,4 @@ const theme: any = createMuiTheme({
     }
 });
 
-export default theme
+export default themeMobile;

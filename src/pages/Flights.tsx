@@ -95,6 +95,7 @@ class Flights extends React.Component<Props, State> {
                             <InputAdornment position="start">
                                 <IconButton
                                     edge="start"
+
                                 >
                                     <FilledBlueCircle />
                                 </IconButton>
