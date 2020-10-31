@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import {
     ReflexContainer,
     ReflexSplitter,
@@ -21,21 +22,15 @@ import DateFieldTemplate from '../components/DateFieldTemplate';
 import Button from '@material-ui/core/Button';
 import HistoryRow from '../components/HistoryRow';
 import { withStyles } from '@material-ui/core/styles';
-import { DatePicker } from '@material-ui/pickers'
 
+import { useContext } from "react";
+import { ContextApp } from "../app/main";
+import { HistoryFlight } from '../store/stateType';
 
-import { InputBase } from '@material-ui/core/';
 type Props = {
 
 }
 
-//type State = {
-//    from: string,
-//    to: string,
-//    departureDate: string,
-//    arrivalDate: any
-
-//}
 
 const SearchButton = withStyles({
     root: {
@@ -52,7 +47,11 @@ const SearchButton = withStyles({
     },
 })(Button);
 
+
+
 const Flights: React.FC<Props> = () => {
+    const { state } = useContext(ContextApp);
+
     return (
         <ReflexContainer orientation="horizontal" maxRecDepth={50}>
                 <ReflexElement minSize={36}
@@ -208,16 +207,8 @@ const Flights: React.FC<Props> = () => {
                 <ReflexElement minSize={36}  className="reflex-element-bottom">
                     <ReflexHandle className="handle ">
                         <div className="bottomContent">
-                            <h2>History</h2>
-                            <HistoryRow />
-                            <HistoryRow />
-                            <HistoryRow />
-                            <HistoryRow />
-                            <HistoryRow />
-                            <HistoryRow />
-                            <HistoryRow />
-                            <HistoryRow />
-                            <HistoryRow />
+                        <h2>History</h2>
+                        {state.historyFlights.map((historyFlight, key) => (<HistoryRow key={key} historyFlight={historyFlight} />))}                        
                         </div>
                     </ReflexHandle>
 

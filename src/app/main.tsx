@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useReducer } from "react";
 import { History } from "history";
 import { Store } from "redux";
 import { Provider } from 'react-redux';
@@ -12,7 +13,9 @@ import themeMobile from '../theme/themeMobile';
 import DateFnsUtils from '@date-io/date-fns';
 import { MuiPickersUtilsProvider } from '@material-ui/pickers';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
-
+import { Action, State, ContextState } from "../store/stateType";
+import { initialState } from '../store/initialState';
+import { historyFlightsReducer } from '../store/historyFlightsReducer'
 
 
 interface MainProps {
@@ -20,14 +23,24 @@ interface MainProps {
     history: History 
 }
 
+export const ContextApp = React.createContext<Partial<ContextState>>({});
+
 const Main: React.FC<MainProps> = ({ store, history }) => {
     const matches = useMediaQuery('(min-width:600px)');
+
+    const [state, changeState] = useReducer<React.Reducer<State, Action>>(historyFlightsReducer, initialState);
+
+    const ContextState: ContextState = {
+        state,
+        changeState
+    };
+
     return (<Provider store={store}>
         <ConnectedRouter history={history}>
             <ThemeProvider theme={matches ? theme : themeMobile}>
-                <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                <ContextApp.Provider value={ContextState}>>
                     <Routes />
-                </MuiPickersUtilsProvider>
+                </ContextApp.Provider>
             </ThemeProvider>
         </ConnectedRouter>
     </Provider>);
