@@ -81,8 +81,12 @@ class Flights extends React.Component<Props, State> {
         const { from, to, departureDate, arrivalDate } = this.state;
 
         return (
-            <ReflexContainer orientation="horizontal">
-                <ReflexElement minSize={36} className="reflex-element-top">
+            <ReflexContainer orientation="horizontal" maxRecDepth={50}>
+                <ReflexElement minSize={36}
+                    propagateDimensionsRate={200}
+                    propagateDimensions={true}
+                    flex={0.4}
+                    className="reflex-element-top">
                     <div className="fieldRowLeft">
                         <Person />
                         <span>1 Adult, Economy, USD</span>
@@ -236,7 +240,7 @@ class Flights extends React.Component<Props, State> {
 
                 <ReflexSplitter />
 
-                <ReflexElement minSize={36} className="reflex-element-bottom">
+                <ReflexElement minSize={36}  className="reflex-element-bottom">
                     <ReflexHandle className="handle ">
                         <div className="bottomContent">
                             <h2>History</h2>

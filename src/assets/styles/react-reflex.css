@@ -45,7 +45,7 @@ body.reflex-row-resize {
     }
 
     .reflex-element-top {
-
+        height:100vh;
     }
 
     .reflex-element-bottom {
