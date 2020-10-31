@@ -11,6 +11,6 @@
     "\\src\\templates",
     "\\src\\theme"
   ],
-  "SelectedNode": "\\package.json",
+  "SelectedNode": "\\src\\components\\DateFieldTemplate.tsx",
   "PreviewInSolutionExplorer": false
 }

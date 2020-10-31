@@ -177,6 +177,7 @@ class Flights extends React.Component<Props, State> {
                                 value={arrivalDate}
                                 style={{ margin: '0' }}
                                 disableUnderline={true}
+                                inputComponent={DateFieldTemplate}
                                 startAdornment={
                                     <InputAdornment position="start">
                                         <IconButton
@@ -224,7 +225,7 @@ class Flights extends React.Component<Props, State> {
                         />
                     </div>
                     <div className="arrow-button">
-                        <IconButton color="primary" aria-label="add to shopping cart">
+                        <IconButton style={{ padding: '0' }} color="primary" aria-label="add to shopping cart">
                             <ArrowButton />
                         </IconButton>
                     </div>

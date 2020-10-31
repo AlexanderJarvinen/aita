@@ -5,11 +5,19 @@ const theme: any = createMuiTheme({
     overrides: {
         MuiInputBase: {
             root: {
-                fontFamily: "SFProDisplayBold", 
+                fontFamily: "SFProDisplayBold",
                 borderBottom: '0',
                 disableUnderline: true,
                 margin: '0'
-                
+
+            }
+        },
+        MuiInputAdornment: {
+            root: {
+                marginRight: '0'
+            },
+            positionStart: {
+                marginRight: '0'
             }
         },
         MuiFilledInput: {
@@ -21,9 +29,16 @@ const theme: any = createMuiTheme({
                 borderRadius: '10px',
                 borderTopLeftRadius: '10px',
                 borderTopRightRadius: '10px',
+                padding: '0'
             },
             input: {
                 padding: '0'
+            },
+            adornedStart: {
+                paddingLeft: '0'
+            },
+            adornedEnd: {
+                paddingRight:'10px'
             }
         },
         MuiInput: {
@@ -39,12 +54,16 @@ const theme: any = createMuiTheme({
         },
         MuiSvgIcon: {
             root: {
-                fill: 'rgba(120, 120, 128, 0.16)'
+                fill: 'transparent'
             }
         },
         MuiIconButton: {
             root: {
-                padding: '18px 9px 18px 11px'
+                color: 'rgba(0, 0, 0, 0.16)',
+                padding: '9px'
+            },
+            edgeStart: {
+                marginLeft: '0'
             }
         }
     }

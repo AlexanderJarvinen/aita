@@ -12,6 +12,14 @@ const themeMobile: any = createMuiTheme({
 
             }
         },
+        MuiInputAdornment: {
+            root: {
+                marginRight: '0'
+            },
+            positionStart: {
+                marginRight: '0'
+            }
+        },
         MuiFilledInput: {
             root: {
                 display: 'flex',
@@ -21,9 +29,16 @@ const themeMobile: any = createMuiTheme({
                 borderRadius: '10px',
                 borderTopLeftRadius: '10px',
                 borderTopRightRadius: '10px',
+                padding: '0'
             },
             input: {
                 padding: '0'
+            },
+            adornedStart: {
+                paddingLeft: '0'
+            },
+            adornedEnd: {
+                paddingRight: '10px'
             }
         },
         MuiInput: {
@@ -39,12 +54,15 @@ const themeMobile: any = createMuiTheme({
         },
         MuiSvgIcon: {
             root: {
-                fill: 'rgba(120, 120, 128, 0.16)'
+                fill: 'transparent'
             }
         },
         MuiIconButton: {
             root: {
-                padding: '18px 9px 18px 11px'
+                padding: '9px'
+            },
+            edgeStart: {
+                marginLeft: '0'
             }
         }
     }

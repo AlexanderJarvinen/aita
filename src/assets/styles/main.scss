@@ -53,7 +53,6 @@ body {
     .content-between-fields {
         position: relative;
         bottom: 310px;
-        left: 11.8px;
         width: 10%;
     }
 
@@ -63,7 +62,7 @@ body {
         flex-direction: row;
         justify-content: center;
         position: relative;
-        bottom: 425px;
+        bottom: 414px;
     }
 
     .fieldRow {
@@ -91,35 +90,64 @@ body {
         display: flex;
         flex-direction: column;
         width: 100%;
+        margin-right: -20px;
+        margin-left: -5px;
+    }
 
-        .cityCode {
-            font-weight: 500;
-            font-size: 15px;
-            text-transform: uppercase;
-        }
 
-        .cityName {
-            font-family: "SFProDisplay";
-            font-weight: 400;
-            font-size: 15px;
-            color: #787880;
-        }
+    .cityCode {
+        font-weight: 500;
+        font-size: 15px;
+        text-transform: uppercase;
+    }
 
-        .countryFlag {
-            margin-left: 4px;
-        }
+    .cityName {
+        font-family: "SFProDisplay";
+        font-weight: 400;
+        font-size: 15px;
+        color: #787880;
+    }
 
-        .dayMonth {
-            font-weight: 500;
-            font-size: 15px;
-            text-transform: uppercase;
-        }
+    .countryFlag {
+        margin-left: 4px;
+    }
 
-        .qtyDays {
-            font-family: "SFProDisplay";
-            font-weight: 400;
-            font-size: 15px;
-            color: #787880;
+
+    .dayMonth {
+        font-weight: 500;
+        font-size: 15px;
+    }
+
+    .days {
+        font-family: "SFProDisplay";
+        font-weight: 400;
+        color: #787880;
+        font-size: 15px;
+    }
+}
+
+
+@media (max-width: 450px) {
+    .main-wrapper {
+        /*.content-between-fields {
+            left: 12px;
+        }*/
+
+        .texttempl {
+            .daymonth {
+                font-size: 13px;
+            }
+
+            .days {
+                font-size: 13px;
+
+                .day {
+                }
+
+                .qty {
+                    font-size: 13px;
+                }
+            }
         }
     }
 }
