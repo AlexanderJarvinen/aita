@@ -15,9 +15,11 @@ import ArrowButton from '../assets/icons/arrowButton';
 import DepartureDate from '../assets/icons/departureDate';
 import ArrivalDate from '../assets/icons/arrivalDate';
 import Person from '../assets/icons/person';
+
 import TextFieldTemplate from '../components/TextFieldTemplate';
 import DateFieldTemplate from '../components/DateFieldTemplate';
 import Button from '@material-ui/core/Button';
+import HistoryRow from '../components/HistoryRow';
 import { withStyles } from '@material-ui/core/styles';
 import { DatePicker } from '@material-ui/pickers'
 
@@ -143,7 +145,7 @@ class Flights extends React.Component<Props, State> {
                             <FilledInput
                                 id="filled-departure-date"
                                 type={'text'}
-                                style={{margin: '0', marginRight: '3px'}}
+                                style={{margin: '0', marginRight: '1.5px'}}
                                 value={departureDate}
                                 disableUnderline={true}
                                 inputComponent={DateFieldTemplate}
@@ -175,7 +177,7 @@ class Flights extends React.Component<Props, State> {
                                 id="filled-arrival-date"
                                 type={'text'}
                                 value={arrivalDate}
-                                style={{ margin: '0' }}
+                                style={{ margin: '0', marginLeft: '1.5px' }}
                                 disableUnderline={true}
                                 inputComponent={DateFieldTemplate}
                                 startAdornment={
@@ -236,13 +238,20 @@ class Flights extends React.Component<Props, State> {
 
                 <ReflexElement minSize={36} className="reflex-element-bottom">
                     <ReflexHandle className="handle ">
-
+                        <div className="bottomContent">
+                            <h2>History</h2>
+                            <HistoryRow />
+                            <HistoryRow />
+                            <HistoryRow />
+                            <HistoryRow />
+                            <HistoryRow />
+                            <HistoryRow />
+                            <HistoryRow />
+                            <HistoryRow />
+                            <HistoryRow />
+                        </div>
                     </ReflexHandle>
-                    <div className="pane-content">
-                        <label>
-                            Bottom Pane
-                        </label>
-                    </div>
+                    
                 </ReflexElement>
 
             </ReflexContainer>)
