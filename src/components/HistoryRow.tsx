@@ -2,14 +2,27 @@ import * as React from 'react';
 import { ClockIcon } from '../components/Icons';
 import { HistoryFlight } from '../store/stateType';
 
+import { ActionType } from "../store/stateType";
+import { useContext } from "react";
+import { ContextApp } from "../app/main";
+
 type Props = {
     historyFlight: HistoryFlight
 }
 
 
 const HistoryRow: React.FC<Props> = (props) => {
+    const { changeState } = useContext(ContextApp);
+
+    const modifySearchFields = (flight: HistoryFlight) => {
+        changeState({
+            type: ActionType.MODIFY_SEARCH,
+            payload: flight
+        });
+    }
+
     return (
-        <div className="historyRow">
+        <div className="historyRow" onClick={() => { modifySearchFields(props.historyFlight) }}>
             <div className="clockIcon"><ClockIcon /></div>
             <div className="historyRowContent">
                 <div className="historyRowTicket">

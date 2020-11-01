@@ -16,7 +16,7 @@ export const reducer = (state: State, action: Action): State => {
         case "CLEAR_ARRIVAL_DATE": {
             return {
                 ...state, arrivalDate: {
-                    date: '',
+                    date: new Date(null),
                     isClear: true
                 }
             }
@@ -34,9 +34,36 @@ export const reducer = (state: State, action: Action): State => {
         case "CLEAR_RETURN_DATE": {
             return {
                 ...state, returnDate: {
-                    date: '',
+                    date: new Date(null),
                     isClear: true
                 }
+            }
+        }
+        case "MODIFY_SEARCH": {
+            const flight = action.payload;
+            return {
+                ...state,
+                departurePlace: {
+                    airportCode: flight.departureAirportCode,
+                    city: flight.departureCity,
+                    countryCode: flight.departureCountryCode,
+                    isClear: false
+                },
+                arrivalDate: {
+                    date: flight.arrivalDate,
+                    isClear: false
+                },
+                arrivalPlace: {
+                    airportCode: flight.arrivalAirportCode,
+                    city: flight.arrivalCity,
+                    countryCode: flight.arrivalCountryCode,
+                    isClear: false
+                },
+                returnDate: {
+                    date: flight.returnDate,
+                    isClear: false
+                }
+            
             }
         }
         default: return state;

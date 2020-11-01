@@ -8,7 +8,7 @@ export type DeparturePlaceTextTemplate = {
 }
 
 export type ArrivalDateTemplate = {
-	date: string,
+	date: Date,
 	isClear: boolean
 }
 
@@ -20,7 +20,7 @@ export type ArrivalPlaceTextTemplate = {
 }
 
 export type ReturnDateTemplate = {
-	date: string,
+	date: Date,
 	isClear: boolean
 }
 
@@ -35,7 +35,8 @@ export type HistoryFlight = {
 	returnDate: Date,
 	personType: string,
 	ticketType: string,
-	quantity: number
+	quantity: number,
+	currency: string
 }
 
 export type HistoryFlights = HistoryFlight[];
@@ -52,7 +53,8 @@ export enum ActionType {
 	CLEAR_DEPARTURE_PLACE = 'CLEAR_DEPARTURE_PLACE',
 	CLEAR_ARRIVAL_DATE = 'CLEAR_ARRIVAL_DATE',
 	CLEAR_ARRIVAL_PLACE = 'CLEAR_ARRIVAL_PLACE',
-	CLEAR_RETURN_DATE = 'CLEAR_RETURN_DATE'
+	CLEAR_RETURN_DATE = 'CLEAR_RETURN_DATE',
+	MODIFY_SEARCH = 'MODIFY_SEARCH'
 }
 
 
@@ -60,11 +62,12 @@ export type ActionClear = {
 	type: ActionType.CLEAR_DEPARTURE_PLACE | ActionType.CLEAR_ARRIVAL_DATE | ActionType.CLEAR_ARRIVAL_PLACE | ActionType.CLEAR_RETURN_DATE
 }
 
-//export type ActionClearArrival = {
-//	type: ActionType.CLEAR_ARRIVAL_PLACE
-//}
+export type ActionModify = {
+	type: ActionType.MODIFY_SEARCH,
+	payload: HistoryFlight
+}
 
-export type Action = ActionClear;
+export type Action = ActionClear | ActionModify;
 
 export type ContextState = {
 	state: State;

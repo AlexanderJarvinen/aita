@@ -11,7 +11,7 @@ type Props = {
 const ReturnDateFieldTemplate: React.FC<Props> = (props) => {
     const { state } = useContext(ContextApp);
     const date: ReturnDateTemplate = state.returnDate;
-    const dateArr = date.date.split(' ').slice(0, 3);
+    const dateArr = date.date.toString().split(' ').slice(0, 3);
 
     return (
         !date.isClear ?

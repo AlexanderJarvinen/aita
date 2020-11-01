@@ -7,7 +7,7 @@ import { ContextApp } from "../app/main";
 const ArrivalDateFieldTemplate: React.FC = () => {
     const { state } = useContext(ContextApp);
     const date: ArrivalDateTemplate = state.arrivalDate;
-    const dateArr = date.date.split(' ').slice(0, 3);
+    const dateArr = date.date.toString().split(' ').slice(0, 3);
 
     return (
         !date.isClear?

@@ -15,11 +15,11 @@ export const initialState: State = {
 		isClear: false
 	},
 	arrivalDate: {
-		date: 'Sat Oct 31 2020 19:25:15 GMT+0300 (Москва, стандартное время)',
+		date: new Date('Sat Oct 31 2020 19:25:15 GMT+0300 (Москва, стандартное время)'),
 		isClear: false
 	},
 	returnDate: {
-		date: 'Tue Nov 2 2020 03:15:15 GMT+0300 (Москва, стандартное время)',
+		date: new Date('Tue Nov 2 2020 03:15:15 GMT+0300 (Москва, стандартное время)'),
 		isClear: false
 	},
 	historyFlights: [
@@ -34,7 +34,8 @@ export const initialState: State = {
 			returnDate: new Date('Tue Nov 2 2020 03:15:15 GMT+0300 (Москва, стандартное время)'),
 			personType: 'Adult',
 			ticketType: 'Economy',
-			quantity: 1
+			quantity: 1,
+			currency: "EUR"
 		},
 		{
 			departureCountryCode: 'RU',
@@ -47,7 +48,8 @@ export const initialState: State = {
 			returnDate: new Date('Tue Feb 2 2020 03:15:15 GMT+0300 (Москва, стандартное время)'),
 			personType: 'Children',
 			ticketType: 'Economy',
-			quantity: 2
+			quantity: 2,
+			currency: "RUB"
 		},
 		{
 			departureCountryCode: 'CK',
@@ -60,7 +62,8 @@ export const initialState: State = {
 			returnDate: new Date('Tue Apr 30 2020 03:15:15 GMT+0300 (Москва, стандартное время)'),
 			personType: 'Adult',
 			ticketType: 'Business',
-			quantity: 3
+			quantity: 3,
+			currency: "AUD"
 		},
 		{
 			departureCountryCode: 'MX',
@@ -73,7 +76,8 @@ export const initialState: State = {
 			returnDate: new Date('Sun Jun 30 2020 03:15:15 GMT+0300 (Москва, стандартное время)'),
 			personType: 'Adult',
 			ticketType: 'Lux',
-			quantity: 4
+			quantity: 4,
+			currency: "MXN"
 		},
 		{
 			departureCountryCode: 'CA',
@@ -86,7 +90,8 @@ export const initialState: State = {
 			returnDate: new Date('Sun Jul 17 2020 03:15:15 GMT+0300 (Москва, стандартное время)'),
 			personType: 'Children',
 			ticketType: 'Economy',
-			quantity: 14
+			quantity: 14,
+			currency: "EUR"
 		},
 		{
 			departureCountryCode: 'IS',
@@ -99,7 +104,8 @@ export const initialState: State = {
 			returnDate: new Date('Mon Aug 25 2020 03:15:15 GMT+0300 (Москва, стандартное время)'),
 			personType: 'Adult',
 			ticketType: 'Business',
-			quantity: 8
+			quantity: 8,
+			currency: "CAD"
 		},
 		{
 			departureCountryCode: 'KE',
@@ -112,7 +118,8 @@ export const initialState: State = {
 			returnDate: new Date('Sat Sep 14 2020 03:15:15 GMT+0300 (Москва, стандартное время)'),
 			personType: 'Adult',
 			ticketType: 'Lux',
-			quantity: 3
+			quantity: 3,
+			currency: "ISK"
 		},
 		{
 			departureCountryCode: 'QA',
@@ -125,7 +132,8 @@ export const initialState: State = {
 			returnDate: new Date('Thu Oct 20 2020 03:15:15 GMT+0300 (Москва, стандартное время)'),
 			personType: 'Children',
 			ticketType: 'Economy',
-			quantity: 9
+			quantity: 9,
+			currency: "KES"
 		},
 		{
 			departureCountryCode: 'DJ',
@@ -138,7 +146,8 @@ export const initialState: State = {
 			returnDate: new Date('Fri Nov 23 2020 03:15:15 GMT+0300 (Москва, стандартное время)'),
 			personType: 'Adult',
 			ticketType: 'Business',
-			quantity: 9
+			quantity: 9,
+			currency: "QAR"
 		},
 		{
 			departureCountryCode: 'LA',
@@ -151,7 +160,8 @@ export const initialState: State = {
 			returnDate: new Date('Mon Dec 18 2020 03:15:15 GMT+0300 (Москва, стандартное время)'),
 			personType: 'Children',
 			ticketType: 'Lux',
-			quantity: 5
+			quantity: 5,
+			currency: "DJF"
 		}
     ]
 }
