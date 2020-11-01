@@ -2,15 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\app",
     "\\src\\assets",
     "\\src\\assets\\icons",
     "\\src\\assets\\styles",
     "\\src\\components",
     "\\src\\pages",
+    "\\src\\store",
     "\\src\\templates",
     "\\src\\theme"
   ],
-  "SelectedNode": "\\src\\components\\DateFieldTemplate.tsx",
+  "SelectedNode": "\\src\\assets\\styles\\main.scss",
   "PreviewInSolutionExplorer": false
 }

@@ -2,6 +2,11 @@ import { State } from './stateType'
 
 
 export const initialState: State = {
+	departurePlace: {
+		airportCode: 'BER',
+		city: 'Berlin',
+		countryCode: 'DE',
+	},
 	historyFlights: [
 		{
 			departureCountryCode: 'DE',

@@ -1,5 +1,11 @@
 import { Dispatch } from "react";
 
+export type departurPlaceTextTemplate = {
+	airportCode: string,
+	city: string,
+	countryCode: string,
+}
+
 export type HistoryFlight = {
 	departureCountryCode: string,
 	departureAirportCode: string,
@@ -17,17 +23,20 @@ export type HistoryFlight = {
 export type HistoryFlights = HistoryFlight[];
 
 export type State = {
+	departurePlace: departurPlaceTextTemplate,
 	historyFlights: HistoryFlights
 }
 
-export enum ActionType {
-	FETCH_REQUEST = 'FETCH_REQUEST'
-}
-export type ActionStringPayload = {
-	type: ActionType.FETCH_REQUEST,
+export enum ActionType { 
+	CLEAR_DEPARTURE_PLACE = 'CLEAR_DEPARTURE_PLACE'
 }
 
-export type Action = ActionStringPayload;
+
+export type ActionClearDeparture = {
+	type: ActionType.CLEAR_DEPARTURE_PLACE
+}
+
+export type Action = ActionClearDeparture;
 
 export type ContextState = {
 	state: State;

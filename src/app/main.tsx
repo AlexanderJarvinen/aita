@@ -15,7 +15,7 @@ import { MuiPickersUtilsProvider } from '@material-ui/pickers';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { Action, State, ContextState } from "../store/stateType";
 import { initialState } from '../store/initialState';
-import { historyFlightsReducer } from '../store/historyFlightsReducer'
+import { reducer } from '../store/reducer'
 
 
 interface MainProps {
@@ -28,7 +28,7 @@ export const ContextApp = React.createContext<Partial<ContextState>>({});
 const Main: React.FC<MainProps> = ({ store, history }) => {
     const matches = useMediaQuery('(min-width:600px)');
 
-    const [state, changeState] = useReducer<React.Reducer<State, Action>>(historyFlightsReducer, initialState);
+    const [state, changeState] = useReducer<React.Reducer<State, Action>>(reducer, initialState);
 
     const ContextState: ContextState = {
         state,
@@ -38,7 +38,7 @@ const Main: React.FC<MainProps> = ({ store, history }) => {
     return (<Provider store={store}>
         <ConnectedRouter history={history}>
             <ThemeProvider theme={matches ? theme : themeMobile}>
-                <ContextApp.Provider value={ContextState}>>
+                <ContextApp.Provider value={ContextState}>
                     <Routes />
                 </ContextApp.Provider>
             </ThemeProvider>

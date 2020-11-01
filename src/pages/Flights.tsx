@@ -7,7 +7,7 @@ import {
     ReflexHandle
 } from 'react-reflex';
 
-import { FilledInput, Input, InputAdornment, IconButton } from '@material-ui/core/';
+import { FilledInput, Input, InputAdornment, IconButton, InputBaseComponentProps } from '@material-ui/core/';
 import CrossIcon from '../assets/icons/cross';
 import FilledBlueCircle from '../assets/icons/filledBlueCircle';
 import EmptyBlueCircle from '../assets/icons/emptyBlueCircle';
@@ -22,10 +22,10 @@ import DateFieldTemplate from '../components/DateFieldTemplate';
 import Button from '@material-ui/core/Button';
 import HistoryRow from '../components/HistoryRow';
 import { withStyles } from '@material-ui/core/styles';
+import { ActionType, FlightTextTemplate } from "../store/stateType";
 
-import { useContext } from "react";
+import { useContext  } from "react";
 import { ContextApp } from "../app/main";
-import { HistoryFlight } from '../store/stateType';
 
 type Props = {
 
@@ -50,19 +50,32 @@ const SearchButton = withStyles({
 
 
 const Flights: React.FC<Props> = () => {
-    const { state } = useContext(ContextApp);
+    const { state, changeState } = useContext(ContextApp);
+
+    const emptyPlace = {
+        airportCode: '',
+        city: '',
+        countryCode: '',
+    }
+
+    const clearDeparturePlace = () => {
+        changeState({
+            type: ActionType.CLEAR_DEPARTURE_PLACE,
+        });
+    }
 
     return (
         <ReflexContainer orientation="horizontal" maxRecDepth={50}>
-                <ReflexElement minSize={36}
-                    propagateDimensionsRate={200}
-                    propagateDimensions={true}
-                    flex={0.4}
-                    className="reflex-element-top">
-                    <div className="fieldRowLeft">
-                        <Person />
-                        <span>1 Adult, Economy, USD</span>
-                    </div>
+            <ReflexElement minSize={36}
+                propagateDimensionsRate={200}
+                propagateDimensions={true}
+                flex={0.4}
+                className="reflex-element-top"
+            >
+                <div className="fieldRowLeft">
+                    <Person />
+                    <span>1 Adult, Economy, USD</span>
+                </div>
                     <FilledInput
                         id="filled-input-from"
                         type={'text'}
@@ -72,7 +85,6 @@ const Flights: React.FC<Props> = () => {
                             <InputAdornment position="start">
                                 <IconButton
                                     edge="start"
-
                                 >
                                     <FilledBlueCircle />
                                 </IconButton>
@@ -82,7 +94,9 @@ const Flights: React.FC<Props> = () => {
                             <InputAdornment position="end">
                                 <IconButton
                                     edge="end"
-                                >
+                                    onClick={() => {
+                                        clearDeparturePlace()
+                                    }}>
                                     <CrossIcon/>
                                 </IconButton>
                             </InputAdornment>
