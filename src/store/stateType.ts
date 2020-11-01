@@ -1,9 +1,17 @@
 import { Dispatch } from "react";
 
-export type departurPlaceTextTemplate = {
+export type DeparturePlaceTextTemplate = {
 	airportCode: string,
 	city: string,
 	countryCode: string,
+	isClear: boolean
+}
+
+export type ArrivalPlaceTextTemplate = {
+	airportCode: string,
+	city: string,
+	countryCode: string,
+	isClear: boolean
 }
 
 export type HistoryFlight = {
@@ -23,12 +31,14 @@ export type HistoryFlight = {
 export type HistoryFlights = HistoryFlight[];
 
 export type State = {
-	departurePlace: departurPlaceTextTemplate,
+	departurePlace: DeparturePlaceTextTemplate,
+	arrivalPlace: ArrivalPlaceTextTemplate,
 	historyFlights: HistoryFlights
 }
 
 export enum ActionType { 
-	CLEAR_DEPARTURE_PLACE = 'CLEAR_DEPARTURE_PLACE'
+	CLEAR_DEPARTURE_PLACE = 'CLEAR_DEPARTURE_PLACE',
+	CLEAR_ARRIVAL_PLACE = 'CLEAR_ARRIVAL_PLACE'
 }
 
 
@@ -36,7 +46,11 @@ export type ActionClearDeparture = {
 	type: ActionType.CLEAR_DEPARTURE_PLACE
 }
 
-export type Action = ActionClearDeparture;
+export type ActionClearArrival = {
+	type: ActionType.CLEAR_ARRIVAL_PLACE
+}
+
+export type Action = ActionClearDeparture | ActionClearArrival;
 
 export type ContextState = {
 	state: State;

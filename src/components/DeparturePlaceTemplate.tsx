@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as Flags from "react-flagkit-svg";
+import { DeparturePlaceTextTemplate } from '../store/stateType'
 
 import { useContext } from "react";
 import { ContextApp } from "../app/main";
@@ -7,15 +8,20 @@ import { ContextApp } from "../app/main";
 type Props = {
 }
 
-const TextFieldTemplate: React.FC<Props> = (props) => {
+const DeparturePlaceTemplate: React.FC<Props> = (props) => {
     const { state } = useContext(ContextApp);
-    let FlagName = Flags[state.departurePlace.countryCode];
+    const place: DeparturePlaceTextTemplate = state.departurePlace;
+
+    const FlagName = Flags[place.countryCode];
     return (
+        !place.isClear ?
         <div className="textTempl">
             <div className="cityCode">{state.departurePlace.airportCode}</div>
             <div><span className="cityName">{state.departurePlace.city}</span><span className="countryFlag">{FlagName ? <FlagName />:<div></div>}</span></div>
-        </div>
+            </div >
+            : <div className="emptyField">Where from?</div>
+        
     );
 }
 
-export default TextFieldTemplate;
+export default DeparturePlaceTemplate;

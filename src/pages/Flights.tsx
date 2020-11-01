@@ -17,12 +17,13 @@ import DepartureDate from '../assets/icons/departureDate';
 import ArrivalDate from '../assets/icons/arrivalDate';
 import Person from '../assets/icons/person';
 
-import TextFieldTemplate from '../components/TextFieldTemplate';
+import DeparturePlaceTemplate from '../components/DeparturePlaceTemplate';
+import ArrivalPlaceTemplate from '../components/ArrivalPlaceTemplate';
 import DateFieldTemplate from '../components/DateFieldTemplate';
 import Button from '@material-ui/core/Button';
 import HistoryRow from '../components/HistoryRow';
 import { withStyles } from '@material-ui/core/styles';
-import { ActionType, FlightTextTemplate } from "../store/stateType";
+import { ActionType } from "../store/stateType";
 
 import { useContext  } from "react";
 import { ContextApp } from "../app/main";
@@ -52,15 +53,15 @@ const SearchButton = withStyles({
 const Flights: React.FC<Props> = () => {
     const { state, changeState } = useContext(ContextApp);
 
-    const emptyPlace = {
-        airportCode: '',
-        city: '',
-        countryCode: '',
-    }
-
     const clearDeparturePlace = () => {
         changeState({
-            type: ActionType.CLEAR_DEPARTURE_PLACE,
+            type: ActionType.CLEAR_DEPARTURE_PLACE
+        });
+    }
+
+    const clearArrivalPlace = () => {
+        changeState({
+            type: ActionType.CLEAR_ARRIVAL_PLACE
         });
     }
 
@@ -79,7 +80,7 @@ const Flights: React.FC<Props> = () => {
                     <FilledInput
                         id="filled-input-from"
                         type={'text'}
-                        inputComponent={TextFieldTemplate}
+                        inputComponent={DeparturePlaceTemplate}
                         disableUnderline={true}
                         startAdornment={
                             <InputAdornment position="start">
@@ -90,23 +91,25 @@ const Flights: React.FC<Props> = () => {
                                 </IconButton>
                             </InputAdornment>
                         }
-                        endAdornment={
+                    endAdornment={
+                        !state.departurePlace.isClear?
                             <InputAdornment position="end">
                                 <IconButton
                                     edge="end"
                                     onClick={() => {
-                                        clearDeparturePlace()
+                                        clearDeparturePlace();
                                     }}>
                                     <CrossIcon/>
                                 </IconButton>
                             </InputAdornment>
+                            : null
                         }
                     />
                     <FilledInput
                         id="filled-input-to"
                         type={'text'}
                         disableUnderline={true}
-                        inputComponent={TextFieldTemplate}
+                        inputComponent={ArrivalPlaceTemplate}
                         startAdornment={
                             <InputAdornment position="start">
                                 <IconButton
@@ -116,43 +119,51 @@ const Flights: React.FC<Props> = () => {
                                 </IconButton>
                             </InputAdornment>
                         }
-                        endAdornment={
+                    endAdornment={
+                        !state.arrivalPlace.isClear?
                             <InputAdornment position="end">
+                                
                                 <IconButton
                                     edge="end"
+                                    onClick={() => {
+                                        clearArrivalPlace();
+                                    }}
                                 >
                                     <CrossIcon />
                                 </IconButton>
                             </InputAdornment>
+                            :null
                         }
                     />
                     <div className="fieldRow">
                         <div className="fieldRowHalf">
                             <FilledInput
-                                id="filled-departure-date"
-                                type={'text'}
-                                style={{margin: '0', marginRight: '1.5px'}}
-                                disableUnderline={true}
-                                inputComponent={DateFieldTemplate}
-                                startAdornment={
-                                    <InputAdornment position="start">
-                                        <IconButton
-                                            edge="start"
-                                            disabled={true}
-                                        >
-                                            <DepartureDate />
-                                        </IconButton>
-                                    </InputAdornment>
-                                }
-                                endAdornment={
-                                    <InputAdornment position="end">
-                                        <IconButton
-                                            edge="end"
-                                        >
-                                            <CrossIcon />
-                                        </IconButton>
-                                    </InputAdornment>
-                                }
+                            id="filled-departure-date"
+                            type={'text'}
+                            style={{ margin: '0', marginRight: '1.5px' }}
+                            disableUnderline={true}
+                            inputComponent={DateFieldTemplate}
+                            startAdornment={
+                                <InputAdornment position="start">
+                                    <IconButton
+                                        edge="start"
+                                        disabled={true}
+                                    >
+                                        <DepartureDate />
+                                    </IconButton>
+                                </InputAdornment>
+                            }
+                            endAdornment={
+
+                                <InputAdornment position="end">
+                                    <IconButton
+                                        edge="end"
+                                    >
+                                        <CrossIcon />
+                                    </IconButton>
+                                </InputAdornment>
+
+                            }
 
                             />
                         </div>

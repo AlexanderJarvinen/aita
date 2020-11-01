@@ -6,6 +6,13 @@ export const initialState: State = {
 		airportCode: 'BER',
 		city: 'Berlin',
 		countryCode: 'DE',
+		isClear: false
+	},
+	arrivalPlace: {
+		airportCode: 'BER',
+		city: 'Berlin',
+		countryCode: 'DE',
+		isClear: false
 	},
 	historyFlights: [
 		{
