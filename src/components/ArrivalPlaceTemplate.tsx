@@ -16,8 +16,8 @@ const ArrivalPlaceTemplate: React.FC<Props> = (props) => {
     return (
         !place.isClear ?
             <div className="textTempl">
-                <div className="cityCode">{state.departurePlace.airportCode}</div>
-                <div><span className="cityName">{state.departurePlace.city}</span><span className="countryFlag">{FlagName ? <FlagName /> : <div></div>}</span></div>
+                <div className="cityCode">{place.airportCode}</div>
+                <div><span className="cityName">{place.city}</span><span className="countryFlag">{FlagName ? <FlagName /> : <div></div>}</span></div>
             </div >
             : <div className="emptyField">Where to?</div>
 

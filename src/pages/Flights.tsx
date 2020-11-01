@@ -18,11 +18,12 @@ import {
     DepartureDate,
     ArrivalDate,
     Person,
-    ClockIcon
+    Plus
 } from '../components/Icons';
 import DeparturePlaceTemplate from '../components/DeparturePlaceTemplate';
 import ArrivalPlaceTemplate from '../components/ArrivalPlaceTemplate';
-import DateFieldTemplate from '../components/DateFieldTemplate';
+import ArrivalDateFieldTemplate from '../components/ArrivalDateTemplate';
+import ReturnDateFieldTemplate from '../components/ReturnDateTemplate';
 import Button from '@material-ui/core/Button';
 import HistoryRow from '../components/HistoryRow';
 import { withStyles } from '@material-ui/core/styles';
@@ -62,9 +63,21 @@ const Flights: React.FC<Props> = () => {
         });
     }
 
+    const clearDepartureDate = () => {
+        changeState({
+            type: ActionType.CLEAR_ARRIVAL_DATE
+        });
+    }
+
     const clearArrivalPlace = () => {
         changeState({
             type: ActionType.CLEAR_ARRIVAL_PLACE
+        });
+    }
+
+    const clearReturnDate = () => {
+        changeState({
+            type: ActionType.CLEAR_RETURN_DATE
         });
     }
 
@@ -145,8 +158,9 @@ const Flights: React.FC<Props> = () => {
                             type={'text'}
                             style={{ margin: '0', marginRight: '1.5px' }}
                             disableUnderline={true}
-                            inputComponent={DateFieldTemplate}
+                            inputComponent={ArrivalDateFieldTemplate}
                             startAdornment={
+                                !state.arrivalDate.isClear ?
                                 <InputAdornment position="start">
                                     <IconButton
                                         edge="start"
@@ -155,17 +169,27 @@ const Flights: React.FC<Props> = () => {
                                         <DepartureDate />
                                     </IconButton>
                                 </InputAdornment>
+                                :
+                                    <InputAdornment position="start">
+                                        <IconButton
+                                            edge="start"
+                                            disabled={true}
+                                        >
+                                            <Plus />
+                                        </IconButton>
+                                    </InputAdornment>
                             }
                             endAdornment={
-
+                                !state.arrivalDate.isClear?
                                 <InputAdornment position="end">
                                     <IconButton
                                         edge="end"
+                                        onClick={() => { clearDepartureDate() }}
                                     >
                                         <CrossIcon />
                                     </IconButton>
                                 </InputAdornment>
-
+                                : null
                             }
 
                             />
@@ -176,8 +200,9 @@ const Flights: React.FC<Props> = () => {
                                 type={'text'}
                                 style={{ margin: '0', marginLeft: '1.5px' }}
                                 disableUnderline={true}
-                                inputComponent={DateFieldTemplate}
+                                inputComponent={ReturnDateFieldTemplate}
                                 startAdornment={
+                                    !state.returnDate.isClear ?
                                     <InputAdornment position="start">
                                         <IconButton
                                             disabled={true}
@@ -186,15 +211,27 @@ const Flights: React.FC<Props> = () => {
                                             <ArrivalDate />
                                         </IconButton>
                                     </InputAdornment>
+                                     :
+                                    <InputAdornment position="start">
+                                        <IconButton
+                                            edge="start"
+                                            disabled={true}
+                                        >
+                                            <Plus />
+                                        </IconButton>
+                                    </InputAdornment>
                                 }
                                 endAdornment={
+                                    !state.returnDate.isClear ?
                                     <InputAdornment position="end">
                                         <IconButton
                                             edge="end"
+                                            onClick={() => { clearReturnDate() }}
                                         >
                                             <CrossIcon />
                                         </IconButton>
                                     </InputAdornment>
+                                    : null
                                 }
 
                             />

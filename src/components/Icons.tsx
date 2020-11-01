@@ -94,6 +94,17 @@ export const VerticalLine: React.FC = () => {
     );
 }
 
+export const Plus: React.FC = () => {
+    return (
+        <SvgIcon width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <rect x="3" y="11" width="18" height="2" fill="#007AFF" />
+            <rect x="11" y="3" width="2" height="18" fill="#007AFF" />
+        </SvgIcon>
+    );
+}
+
+
+
 
 
 

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import ClockIcon from '../assets/icons/clockIcon';
+import { ClockIcon } from '../components/Icons';
 import { HistoryFlight } from '../store/stateType';
 
 type Props = {
@@ -17,7 +17,7 @@ const HistoryRow: React.FC<Props> = (props) => {
                     <div className="historyRowDesc">{props.historyFlight.quantity} {props.historyFlight.personType}, {props.historyFlight.ticketType}</div>
                 </div>
                 <div className="historyRowDate">
-                    <div>{props.historyFlight.departureDate.toString().split(' ').slice(1, 3).reverse().join(' ')}-{props.historyFlight.arrivalDate.toString().split(' ').slice(1, 3).reverse().join(' ')}</div>
+                    <div>{props.historyFlight.arrivalDate.toString().split(' ').slice(1, 3).reverse().join(' ')}-{props.historyFlight.returnDate.toString().split(' ').slice(1, 3).reverse().join(' ')}</div>
                 </div>
             </div>
         </div>
