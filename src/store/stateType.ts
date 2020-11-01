@@ -63,7 +63,8 @@ export enum ActionType {
 	CLEAR_ARRIVAL_DATE = 'CLEAR_ARRIVAL_DATE',
 	CLEAR_ARRIVAL_PLACE = 'CLEAR_ARRIVAL_PLACE',
 	CLEAR_RETURN_DATE = 'CLEAR_RETURN_DATE',
-	MODIFY_SEARCH = 'MODIFY_SEARCH'
+	MODIFY_SEARCH = 'MODIFY_SEARCH',
+	TOGGLE_VALUES = 'TOGGLE_VALUES'
 }
 
 
@@ -76,7 +77,13 @@ export type ActionModify = {
 	payload: HistoryFlight
 }
 
-export type Action = ActionClear | ActionModify;
+export type ActionToggle = {
+	type: ActionType.TOGGLE_VALUES,
+	payload_1: DeparturePlaceTextTemplate,
+	payload_2: ArrivalPlaceTextTemplate
+}
+
+export type Action = ActionClear | ActionModify | ActionToggle;
 
 export type ContextState = {
 	state: State;

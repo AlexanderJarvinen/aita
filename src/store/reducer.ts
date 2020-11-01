@@ -73,6 +73,23 @@ export const reducer = (state: State, action: Action): State => {
             
             }
         }
+        case "TOGGLE_VALUES": {
+            return {
+                ...state,
+                departurePlace: {
+                    airportCode: action.payload_1.airportCode,
+                    city: action.payload_1.city,
+                    countryCode: action.payload_1.countryCode,
+                    isClear: action.payload_1.isClear
+                },
+                arrivalPlace: {
+                    airportCode: action.payload_2.airportCode,
+                    city: action.payload_2.city,
+                    countryCode: action.payload_2.countryCode,
+                    isClear: action.payload_2.isClear
+                }
+            }
+        }
         default: return state;
     }
 };

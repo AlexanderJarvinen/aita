@@ -27,7 +27,7 @@ import Button from '@material-ui/core/Button';
 import HistoryRow from '../components/HistoryRow';
 import TicketDescriptionTemplate from '../components/TicketDescription';
 import { withStyles } from '@material-ui/core/styles';
-import { ActionType } from "../store/stateType";
+import { ActionType, DeparturePlaceTextTemplate, ArrivalPlaceTextTemplate } from "../store/stateType";
 
 import { useContext  } from "react";
 import { ContextApp } from "../app/main";
@@ -78,6 +78,14 @@ const Flights: React.FC<Props> = () => {
     const clearReturnDate = () => {
         changeState({
             type: ActionType.CLEAR_RETURN_DATE
+        });
+    }
+
+    const togglePlaces = (departurePlace: DeparturePlaceTextTemplate, arrivalPlace: ArrivalPlaceTextTemplate) => {
+        changeState({
+            type: ActionType.TOGGLE_VALUES,
+            payload_1: arrivalPlace,
+            payload_2: departurePlace
         });
     }
 
@@ -262,7 +270,12 @@ const Flights: React.FC<Props> = () => {
                         />
                     </div>
                     <div className="arrow-button">
-                        <IconButton style={{ padding: '0' }} color="primary" aria-label="add to shopping cart">
+                    <IconButton
+                        style={{ padding: '0' }}
+                        color="primary"
+                        aria-label="add to shopping cart"
+                        onClick={() => { togglePlaces(state.departurePlace, state.arrivalPlace) }}
+                    >
                             <ArrowButton />
                         </IconButton>
                     </div>
