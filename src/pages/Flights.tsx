@@ -8,15 +8,18 @@ import {
 } from 'react-reflex';
 
 import { FilledInput, Input, InputAdornment, IconButton, InputBaseComponentProps } from '@material-ui/core/';
-import CrossIcon from '../assets/icons/cross';
-import FilledBlueCircle from '../assets/icons/filledBlueCircle';
-import EmptyBlueCircle from '../assets/icons/emptyBlueCircle';
-import VerticalLine from '../assets/icons/verticalLine';
-import ArrowButton from '../assets/icons/arrowButton';
-import DepartureDate from '../assets/icons/departureDate';
-import ArrivalDate from '../assets/icons/arrivalDate';
-import Person from '../assets/icons/person';
 
+import {
+    CrossIcon,
+    FilledBlueCircle,
+    EmptyBlueCircle,
+    VerticalLine,
+    ArrowButton,
+    DepartureDate,
+    ArrivalDate,
+    Person,
+    ClockIcon
+} from '../components/Icons';
 import DeparturePlaceTemplate from '../components/DeparturePlaceTemplate';
 import ArrivalPlaceTemplate from '../components/ArrivalPlaceTemplate';
 import DateFieldTemplate from '../components/DateFieldTemplate';
