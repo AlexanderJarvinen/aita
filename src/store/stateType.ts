@@ -1,5 +1,13 @@
 import { Dispatch } from "react";
 
+export type TicketDescription = {
+	qty: number,
+	personType: string,
+	ticketType: string,
+	currency: string,
+	isClear: boolean
+}
+
 export type DeparturePlaceTextTemplate = {
 	airportCode: string,
 	city: string,
@@ -42,6 +50,7 @@ export type HistoryFlight = {
 export type HistoryFlights = HistoryFlight[];
 
 export type State = {
+	ticketDesc: TicketDescription,
 	departurePlace: DeparturePlaceTextTemplate,
 	arrivalDate: ArrivalDateTemplate,
 	arrivalPlace: ArrivalPlaceTextTemplate,

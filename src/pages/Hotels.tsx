@@ -10,7 +10,7 @@ type State = {
 
 class Hotels extends React.Component<Props, State> {
     render() {
-        return (<h1>Hotels</h1>)
+        return (<div></div>)
     }
 }
 

@@ -62,6 +62,13 @@ export const reducer = (state: State, action: Action): State => {
                 returnDate: {
                     date: flight.returnDate,
                     isClear: false
+                },
+                ticketDesc: {
+                    qty: flight.quantity,
+                    personType: flight.personType,
+                    ticketType: flight.ticketType,
+                    currency: flight.currency,
+                    isClear: false
                 }
             
             }

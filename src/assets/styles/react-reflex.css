@@ -92,7 +92,7 @@ body.reflex-row-resize {
 }
 
 .reflex-element.horizontal .reflex-handle {
-    cursor: row-resize;
+    cursor: pointer;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;

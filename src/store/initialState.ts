@@ -2,25 +2,32 @@ import { State } from './stateType'
 
 
 export const initialState: State = {
+	ticketDesc: {
+		qty: null,
+		personType: '',
+		ticketType: '',
+		currency: '',
+		isClear: true
+	},
 	departurePlace: {
-		airportCode: 'BER',
-		city: 'Berlin',
-		countryCode: 'DE',
-		isClear: false
+		airportCode: '',
+		city: '',
+		countryCode: '',
+		isClear: true
 	},
 	arrivalPlace: {
-		airportCode: 'BER',
-		city: 'Berlin',
-		countryCode: 'DE',
-		isClear: false
+		airportCode: '',
+		city: '',
+		countryCode: '',
+		isClear: true
 	},
 	arrivalDate: {
-		date: new Date('Sat Oct 31 2020 19:25:15 GMT+0300 (Москва, стандартное время)'),
-		isClear: false
+		date: new Date(null),
+		isClear: true
 	},
 	returnDate: {
-		date: new Date('Tue Nov 2 2020 03:15:15 GMT+0300 (Москва, стандартное время)'),
-		isClear: false
+		date: new Date(null),
+		isClear: true
 	},
 	historyFlights: [
 		{

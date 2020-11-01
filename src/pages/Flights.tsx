@@ -17,7 +17,6 @@ import {
     ArrowButton,
     DepartureDate,
     ArrivalDate,
-    Person,
     Plus
 } from '../components/Icons';
 import DeparturePlaceTemplate from '../components/DeparturePlaceTemplate';
@@ -26,6 +25,7 @@ import ArrivalDateFieldTemplate from '../components/ArrivalDateTemplate';
 import ReturnDateFieldTemplate from '../components/ReturnDateTemplate';
 import Button from '@material-ui/core/Button';
 import HistoryRow from '../components/HistoryRow';
+import TicketDescriptionTemplate from '../components/TicketDescription';
 import { withStyles } from '@material-ui/core/styles';
 import { ActionType } from "../store/stateType";
 
@@ -89,10 +89,7 @@ const Flights: React.FC<Props> = () => {
                 flex={0.4}
                 className="reflex-element-top"
             >
-                <div className="fieldRowLeft">
-                    <Person />
-                    <span>1 Adult, Economy, USD</span>
-                </div>
+                <TicketDescriptionTemplate />
                     <FilledInput
                         id="filled-input-from"
                         type={'text'}
@@ -237,8 +234,13 @@ const Flights: React.FC<Props> = () => {
                             />
                         </div>
                     </div>
-                    <div className="fieldRow">
-                        <SearchButton variant="contained" color="primary">
+                <div className="fieldRow">
+                    <SearchButton variant="contained" color="primary" disabled={
+                        state.arrivalDate.isClear &&
+                        state.arrivalPlace.isClear &&
+                        state.departurePlace.isClear &&
+                        state.returnDate.isClear
+                    }>
                             Search
                         </SearchButton>
                     </div>
