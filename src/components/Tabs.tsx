@@ -10,26 +10,3 @@ const Tabs: React.SFC = () => (
 );
 
 export default Tabs;
-
-{/*<div className="nav" >
-        {links.map(({ path, name }) => (
-            <div className="nav-tab">
-            <CSSTransition
-                in={true}
-                timeout={300}
-                classNames="tab"
-                unmountOnExit
-            >
-                <NavLink key={path} exact to={path} activeClassName="active">
-                        
-                           
-                        
-                            {name}
-                     
-                            
-                  
-                </NavLink>
-            </CSSTransition>
-                </div>
-                ))}
-            </div>*/}

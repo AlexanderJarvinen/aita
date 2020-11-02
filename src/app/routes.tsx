@@ -18,27 +18,23 @@ const Routes: React.SFC = () => (
         <h1>Booking</h1>
         <Tabs />
         <div>
-    
-
-                <Redirect from='/' to='/flights' />
-                {routes.map(({ path, Component }) => (
-                    <Route key={path} exact path={path}>
-                        {({ match }) => (
-                            <CSSTransition
-                                in={match != null}
-                                timeout={300}
-                                classNames="page"
-                                unmountOnExit
-                            >
-                                <div className="page">
-                                    <Component />
-                                </div>
-                            </CSSTransition>
-                        )}
-                    </Route>
-                ))}
-                
-
+            <Redirect from='/' to='/flights' />
+            {routes.map(({ path, Component }) => (
+                <Route key={path} exact path={path}>
+                    {({ match }) => (
+                        <CSSTransition
+                            in={match != null}
+                            timeout={300}
+                            classNames="page"
+                            unmountOnExit
+                        >
+                            <div className="page">
+                                <Component />
+                            </div>
+                        </CSSTransition>
+                    )}
+                </Route>
+            ))}
         </div>
     </Root>
 )

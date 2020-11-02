@@ -5,10 +5,7 @@ import { ArrivalPlaceTextTemplate } from '../store/stateType'
 import { useContext } from "react";
 import { ContextApp } from "../app/main";
 
-type Props = {
-}
-
-const ArrivalPlaceTemplate: React.FC<Props> = (props) => {
+const ArrivalPlaceTemplate: React.FC = () => {
     const { state } = useContext(ContextApp);
     const place: ArrivalPlaceTextTemplate = state.arrivalPlace;
 

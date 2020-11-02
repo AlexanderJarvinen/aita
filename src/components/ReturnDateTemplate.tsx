@@ -5,10 +5,8 @@ import { ReturnDateTemplate } from '../store/stateType'
 import { useContext } from "react";
 import { ContextApp } from "../app/main";
 
-type Props = {
-}
 
-const ReturnDateFieldTemplate: React.FC<Props> = (props) => {
+const ReturnDateFieldTemplate: React.FC = () => {
     const { state } = useContext(ContextApp);
     const date: ReturnDateTemplate = state.returnDate;
     const dateArr = date.date.toString().split(' ').slice(0, 3);

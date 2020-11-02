@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as Flags from "react-flagkit-svg";
 import { TicketDescription } from '../store/stateType'
 
 import { useContext } from "react";
@@ -7,10 +6,7 @@ import { ContextApp } from "../app/main";
 
 import { Person } from '../components/Icons';
 
-type Props = {
-}
-
-const TicketDescriptionTemplate: React.FC<Props> = (props) => {
+const TicketDescriptionTemplate: React.FC = () => {
     const { state } = useContext(ContextApp);
     const desc: TicketDescription = state.ticketDesc;
 

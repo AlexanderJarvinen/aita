@@ -5,10 +5,7 @@ import { DeparturePlaceTextTemplate } from '../store/stateType'
 import { useContext } from "react";
 import { ContextApp } from "../app/main";
 
-type Props = {
-}
-
-const DeparturePlaceTemplate: React.FC<Props> = (props) => {
+const DeparturePlaceTemplate: React.FC = () => {
     const { state } = useContext(ContextApp);
     const place: DeparturePlaceTextTemplate = state.departurePlace;
 
@@ -20,7 +17,7 @@ const DeparturePlaceTemplate: React.FC<Props> = (props) => {
                 <div><span className="cityName">{place.city}</span><span className="countryFlag">{FlagName ? <FlagName /> : <div></div>}</span></div>
             </div >
             : <div className="emptyField">Where from?</div>
-        
+
     );
 }
 

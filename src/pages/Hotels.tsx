@@ -1,14 +1,6 @@
 import * as React from 'react';
 
-type Props = {
-
-}
-
-type State = {
-
-}
-
-class Hotels extends React.Component<Props, State> {
+class Hotels extends React.Component {
     render() {
         return (<div></div>)
     }

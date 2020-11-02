@@ -10,12 +10,12 @@ const ArrivalDateFieldTemplate: React.FC = () => {
     const dateArr = date.date.toString().split(' ').slice(0, 3);
 
     return (
-        !date.isClear?
-        <div className="textTempl">
-            <div className="dayMonth">{dateArr.slice(1, 3).reverse().join().replace(',', ' ')}</div>
-            <div className="days"><span className="day">{dateArr[0]}</span></div>
-        </div>
-        : <div className="emptyField">Arrival Date</div>
+        !date.isClear ?
+            <div className="textTempl">
+                <div className="dayMonth">{dateArr.slice(1, 3).reverse().join().replace(',', ' ')}</div>
+                <div className="days"><span className="day">{dateArr[0]}</span></div>
+            </div>
+            : <div className="emptyField">Arrival Date</div>
     );
 }
 
