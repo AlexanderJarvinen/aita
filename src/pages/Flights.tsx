@@ -7,7 +7,7 @@ import {
     ReflexHandle
 } from 'react-reflex';
 
-import { FilledInput, Input, InputAdornment, IconButton, InputBaseComponentProps } from '@material-ui/core/';
+import { FilledInput, Input, InputAdornment, IconButton } from '@material-ui/core/';
 
 import {
     CrossIcon,
