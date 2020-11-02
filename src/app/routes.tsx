@@ -18,7 +18,9 @@ const Routes: React.SFC = () => (
         <h1>Booking</h1>
         <Tabs />
         <div>
-            <Switch>
+    
+
+                <Redirect from='/' to='/flights' />
                 {routes.map(({ path, Component }) => (
                     <Route key={path} exact path={path}>
                         {({ match }) => (
@@ -35,8 +37,8 @@ const Routes: React.SFC = () => (
                         )}
                     </Route>
                 ))}
-                <Redirect from='/' to='/flights' />
-            </Switch>
+                
+
         </div>
     </Root>
 )
