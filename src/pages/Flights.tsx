@@ -86,8 +86,8 @@ const Flights: React.FC = () => {
     }
 
     return (
-        <ReflexContainer orientation="horizontal" maxRecDepth={50}>
-            <ReflexElement minSize={36}
+        <ReflexContainer orientation="horizontal" maxRecDepth={20}>
+            <ReflexElement minSize={0}
                 propagateDimensionsRate={200}
                 propagateDimensions={true}
                 flex={0.4}
