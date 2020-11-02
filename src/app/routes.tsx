@@ -6,18 +6,51 @@ import Tabs from '../components/Tabs';
 import Hotels from '../pages/Hotels'; 
 import Flights from '../pages/Flights';
 
+import { CSSTransition } from 'react-transition-group';
+
+const routes = [
+    { path: '/flights', name: 'Flights', Component: Flights },
+    { path: '/hotels', name: 'Hotels', Component: Hotels },
+];
 
 const Routes: React.SFC = () => (
     <Root>
         <h1>Booking</h1>
         <Tabs />
-        <div>
-            <Switch>
-                <Route path="/flights" component={Flights} />
-                <Route path="/hotels" component={Hotels} />
-                <Redirect from='/' to='/flights' />
-            </Switch>
+        <div className="container">
+            {routes.map(({ path, Component }) => (
+                <Route key={path} exact path={path}>
+                    {({ match }) => (
+                        <CSSTransition
+                            in={match != null}
+                            timeout={300}
+                            classNames="page"
+                            unmountOnExit
+                        >
+                            <div className="page">
+                                <Component />
+                            </div>
+                        </CSSTransition>
+                    )}
+                </Route>
+            ))}
         </div>
+        {/*<div className="container">
+                <Route key='/flights' exact path='/flights'>
+                    <CSSTransition
+                        in={true}
+                        timeout={500}
+                        classNames="page"
+                        unmountOnExit
+                >
+                    <div className="page">
+                        <Flights />
+                    </div>
+                    </CSSTransition>
+                </Route>
+                <Route key='/hotels' path='/hotels'><Hotels /></Route>
+                <Redirect from='/' to='/flights' />
+        </div>*/}
     </Root>
 
 )

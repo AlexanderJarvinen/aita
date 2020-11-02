@@ -3,6 +3,7 @@
 
 body {
     font-family: SFProDisplay, sans-serif;
+    overflow-y: hidden;
 }
 
 .main-wrapper {
@@ -191,6 +192,50 @@ body {
         }
     }
 }
+
+/*.container {
+    position: relative;
+}
+
+.page {
+    position: absolute;
+    left: 15px;
+    right: 15px;
+}*/
+
+.page-enter {
+    /*opacity: 0;
+    transform: scale(1.1);*/
+    opacity: 0;
+    transform: translateX(-100px);
+}
+
+.page-enter-active {
+    /*opacity: 1;
+    /*transform: scale(1);*/
+    /*transition: opacity 300ms, transform 300ms;*/
+    /*transition: all .5s ease-in-out;*/
+    opacity: 1;
+    transform: translateX(0px);
+    transition: all .3s ease-in-out;
+}
+
+.page-exit {
+    /*opacity: 1;
+    transform: scale(1);*/
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.page-exit-active {
+    /*opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 300ms, transform 300ms;*/
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all .3s ease-in-out;
+}
+
 
 
 @media (max-width: 450px) {
