@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as Flags from "react-flagkit-svg";
+import * as Flags from "@flagkit/react";
 import { ArrivalPlaceTextTemplate } from '../store/stateType'
 
 import { useContext } from "react";
@@ -9,7 +9,7 @@ const ArrivalPlaceTemplate: React.FC = () => {
     const { state } = useContext(ContextApp);
     const place: ArrivalPlaceTextTemplate = state.arrivalPlace;
 
-    const FlagName = Flags[place.countryCode];
+    const FlagName = Flags[`FlagIcon${place.countryCode}`];
     return (
         !place.isClear ?
             <div className="textTempl">
